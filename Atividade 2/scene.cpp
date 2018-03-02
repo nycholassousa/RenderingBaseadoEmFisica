@@ -27,7 +27,7 @@ bool Scene::intersect( const Ray &ray,
 
 void Scene::load( void ) 
 {
-    
+    /*
     //Sphere 1
     primitives_.push_back( Primitive::PrimitiveUniquePtr( new Sphere{ glm::vec3{  0.0f, 0.0f,  0.0f }, 0.2f } ) );
     primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
@@ -40,12 +40,28 @@ void Scene::load( void )
     //Sphere 4
     primitives_.push_back( Primitive::PrimitiveUniquePtr( new Sphere{ glm::vec3{  0.0f, 0.5f, -3.0f }, 0.2f } ) );
     primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
+    */
     
     //Triangle 1
-    glm::vec3 vertex0 = { -0.5f, 0.0f, 0.0f };
-    glm::vec3 vertex1 = { 0.0f , 0.5f , 0.0f };
-    glm::vec3 vertex2 = { 0.0f , -0.5f , 0.0f}; 
+    glm::vec3 vertex0 = { 0.9f, 0.9f, 0.0f };
+    glm::vec3 vertex1 = { 0.9f , -0.9f , 0.0f };
+    glm::vec3 vertex2 = { 0.3f , 0.3f , 0.3f}; 
     primitives_.push_back( Primitive::PrimitiveUniquePtr( new Triangle{ vertex0, vertex1, vertex2 } ) );
     primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
+
+    //Triangle 2
+    vertex0 = { -1.0f, 1.0f, 0.0f };
+    vertex1 = { 1.0f , 1.0f , 0.0f };
+    vertex2 = { 0.0f , 0.0f , 0.0f}; 
+    primitives_.push_back( Primitive::PrimitiveUniquePtr( new Triangle{ vertex0, vertex1, vertex2 } ) );
+    primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
+
+    //Triangle 3
+    vertex0 = { -0.9f, 0.0f, 0.1f };
+    vertex1 = { -0.9f , 0.5f , 0.1f };
+    vertex2 = { 0.0f , -0.0f , 0.1f}; 
+    primitives_.push_back( Primitive::PrimitiveUniquePtr( new Triangle{ vertex0, vertex1, vertex2 } ) );
+    primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
+
 }
 

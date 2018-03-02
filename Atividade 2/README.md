@@ -68,6 +68,21 @@ Gerei uma imagem com o triângulo mantendo as esferas, para saber se as vértice
 	<br>
 </p>
 
+Removendo as esferas e adicionais mais triângulos:
+<p align="center">
+	<br>
+	<img src="./images/image2.jpg"/>
+	<h5 align="center">Figura 2 - Triângulos em vários formatos</h5>
+	<br>
+</p>
+
+
+## Dificuldades Encontradas
+
+Não houve nada que pudesse ser encarado como dificuldade, as partes mais trabalhosas foram apenas pensar em como fazer sobre as cores, como onde inserir o código para manter uma boa estrutura.
+Além do mais, "visualizar" os triângulos na tela antes de inserir é meio que uma dificuldade pra mim, porém, deixei dessa forma na base de tentativa e erro.
+
+
 ## Fontes
 
 [Ray Tracing: Rendering a Triangle -Scratch a Pixel 2.0](https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-rendering-a-triangle/moller-trumbore-ray-triangle-intersection)
