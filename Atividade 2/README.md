@@ -72,7 +72,23 @@ Removendo as esferas e adicionais mais triângulos:
 <p align="center">
 	<br>
 	<img src="./images/image2.jpg"/>
-	<h5 align="center">Figura 2 - Triângulos em vários formatos</h5>
+	<h5 align="center">Figura 2 - Apenas triângulos adicionados</h5>
+	<br>
+</p>
+
+Mudando forma de alguns triângulos
+<p align="center">
+	<br>
+	<img src="./images/image3.jpg"/>
+	<h5 align="center">Figura 3 - Triângulos em vários formatos</h5>
+	<br>
+</p>
+
+Alterando a coordenada z para mudança de cor
+<p align="center">
+	<br>
+	<img src="./images/image4.jpg"/>
+	<h5 align="center">Figura 4 - Triângulos da imagem anterior apenas com o z diferente entre si</h5>
 	<br>
 </p>
 

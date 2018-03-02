@@ -50,16 +50,16 @@ void Scene::load( void )
     primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
 
     //Triangle 2
-    vertex0 = { -1.0f, 1.0f, 0.0f };
-    vertex1 = { 1.0f , 1.0f , 0.0f };
-    vertex2 = { 0.0f , 0.0f , 0.0f}; 
+    vertex0 = { -1.0f, 1.0f, -3.0f };
+    vertex1 = { 1.0f , 1.0f , -3.0f };
+    vertex2 = { 0.0f , 0.0f , -3.0f}; 
     primitives_.push_back( Primitive::PrimitiveUniquePtr( new Triangle{ vertex0, vertex1, vertex2 } ) );
     primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
 
     //Triangle 3
-    vertex0 = { -0.9f, 0.0f, 0.1f };
-    vertex1 = { -0.9f , 0.5f , 0.1f };
-    vertex2 = { 0.0f , -0.0f , 0.1f}; 
+    vertex0 = { -0.9f, 0.0f, -1.0f };
+    vertex1 = { -0.9f , 0.5f , -1.0f };
+    vertex2 = { 0.0f , -0.0f , -1.0f}; 
     primitives_.push_back( Primitive::PrimitiveUniquePtr( new Triangle{ vertex0, vertex1, vertex2 } ) );
     primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
 
