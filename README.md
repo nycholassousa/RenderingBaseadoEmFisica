@@ -9,4 +9,4 @@ Em cada atividade, terá um arquivo makefile para rodar o código, lembrando que
 O arquivo readme será parecido com uma postagem de blog
 
 ## Atividades propostas
-[Trabalho 2 (Intersecção Raio-Triângulo)](https://github.com/nycholassousa/AtividadesCG/tree/master/Atividade%202)
+[Trabalho 2 (Intersecção Raio-Triângulo)](https://github.com/nycholassousa/RenderingBaseadoEmFisica/tree/master/Atividade%202)
