@@ -60,6 +60,14 @@ Para mostrar a cor, apenas modifiquei a linha onde setava o buffer_.buffer_data_
 
 ## Imagens
 
+Gerei uma imagem com o triângulo mantendo as esferas, para saber se as vértices estavam corretas:
+<p align="center">
+	<br>
+	<img src="./images/image1.jpg"/>
+	<h5 align="center">Figura 1 - Triângulo gerado junto com as esferas</h5>
+	<br>
+</p>
+
 ## Fontes
 
 [Ray Tracing: Rendering a Triangle -Scratch a Pixel 2.0](https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-rendering-a-triangle/moller-trumbore-ray-triangle-intersection)
