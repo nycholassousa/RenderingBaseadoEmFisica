@@ -30,20 +30,19 @@ bool Scene::intersect(const Ray &ray,
 void Scene::load(void)
 {
     //Spheres
-    
+
     //Sphere 1
-    primitives_.push_back( Primitive::PrimitiveUniquePtr( new Sphere{ glm::vec3{  0.0f, 0.0f,  0.0f }, 0.2f } ) );
-    primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 0.0f, 0.0f}, 0.2f}));
+    primitives_.back()->color = glm::vec3{rand() % 256 / 255.0, rand() % 256 / 255.0, rand() % 256 / 255.0};
     //Sphere 2
-    primitives_.push_back( Primitive::PrimitiveUniquePtr( new Sphere{ glm::vec3{ -0.5f, 0.0f, -1.0f }, 0.2f } ) );
-    primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{-0.5f, 0.0f, -1.0f}, 0.2f}));
+    primitives_.back()->color = glm::vec3{rand() % 256 / 255.0, rand() % 256 / 255.0, rand() % 256 / 255.0};
     //Sphere 3
-    primitives_.push_back( Primitive::PrimitiveUniquePtr( new Sphere{ glm::vec3{  0.0f,-0.5f, -2.0f }, 0.2f } ) );
-    primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, -0.5f, -2.0f}, 0.2f}));
+    primitives_.back()->color = glm::vec3{rand() % 256 / 255.0, rand() % 256 / 255.0, rand() % 256 / 255.0};
     //Sphere 4
-    primitives_.push_back( Primitive::PrimitiveUniquePtr( new Sphere{ glm::vec3{  0.0f, 0.5f, -3.0f }, 0.2f } ) );
-    primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
-    
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 0.5f, -3.0f}, 0.2f}));
+    primitives_.back()->color = glm::vec3{rand() % 256 / 255.0, rand() % 256 / 255.0, rand() % 256 / 255.0};
 
     //Triangles
     /*
@@ -68,7 +67,6 @@ void Scene::load(void)
     primitives_.push_back( Primitive::PrimitiveUniquePtr( new Triangle{ vertex0, vertex1, vertex2 } ) );
     primitives_.back()->color = glm::vec3{ rand()%256/255.0,rand()%256/255.0,rand()%256/255.0};
     */
-    
 
     //OBJ Loader
     /*

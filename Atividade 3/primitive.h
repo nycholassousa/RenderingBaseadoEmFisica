@@ -8,19 +8,17 @@
 
 class Primitive
 {
-public:
+  public:
+    typedef std::unique_ptr<Primitive> PrimitiveUniquePtr;
 
-    typedef std::unique_ptr< Primitive > PrimitiveUniquePtr;
+    glm::vec3 color = {0.5f, 0.5f, 0.5f};
 
-    glm::vec3 color = { 0.5f, 0.5f, 0.5f };
+    Primitive(void);
 
-    Primitive( void );
+    virtual ~Primitive(void);
 
-    virtual ~Primitive( void );
-
-    virtual bool intersect( const Ray &ray,
-                            IntersectionRecord &intersection_record ) const = 0;
+    virtual bool intersect(const Ray &ray,
+                           IntersectionRecord &intersection_record) const = 0;
 };
 
 #endif /* PRIMITIVE_H_ */
-

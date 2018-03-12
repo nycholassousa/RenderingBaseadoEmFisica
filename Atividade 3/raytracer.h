@@ -11,17 +11,15 @@
 
 class RayTracer
 {
-public:
+  public:
+    RayTracer(Camera &camera,
+              const Scene &scene,
+              const glm::vec3 background_color,
+              Buffer &buffer);
 
-    RayTracer( Camera &camera,
-               const Scene &scene,
-               const glm::vec3 background_color,
-               Buffer &buffer );
+    void integrate(void);
 
-    void integrate( void );
-
-private:
-
+  private:
     const Camera &camera_;
 
     const Scene &scene_;
@@ -29,8 +27,6 @@ private:
     glm::dvec3 background_color_;
 
     Buffer &buffer_;
-
 };
 
 #endif /* RAYTRACER_H_ */
-

@@ -15,4 +15,3 @@ struct IntersectionRecord
 };
 
 #endif /* INTERSECTION_RECORD_H_ */
-
