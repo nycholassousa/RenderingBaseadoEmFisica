@@ -37,7 +37,7 @@ $(EXECUTABLE): $(OBJECTS)
 .PHONY: clean distclean
 
 clean:
-	rm *.o *.d
+	rm *.o *.d *.ppm
 
 distclean: clean
 	rm $(EXECUTABLE)
