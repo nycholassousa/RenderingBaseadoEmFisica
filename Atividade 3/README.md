@@ -19,7 +19,7 @@ Este arquivo usa o RT-Template disponibilizado pelo professor Christian A. Pagot
 
 <p align="center">
 	<br>
-	<img src="./images/image1.png"/>
+	<img src="./images/image2.png"/>
 	<h5 align="center">Figura 2 - Mudança de posição da câmera, provando a noção de distância que a câmera perpectiva promove</h5>
 	<br>
 </p>
