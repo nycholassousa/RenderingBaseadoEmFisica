@@ -30,7 +30,7 @@ bool Scene::intersect(const Ray &ray,
 void Scene::load(void)
 {
     //Spheres
-
+    /*
     //Sphere 1
     primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 0.0f, 0.0f}, 0.2f}));
     primitives_.back()->color = glm::vec3{rand() % 256 / 255.0, rand() % 256 / 255.0, rand() % 256 / 255.0};
@@ -43,6 +43,7 @@ void Scene::load(void)
     //Sphere 4
     primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{glm::vec3{0.0f, 0.5f, -3.0f}, 0.2f}));
     primitives_.back()->color = glm::vec3{rand() % 256 / 255.0, rand() % 256 / 255.0, rand() % 256 / 255.0};
+    */
 
     //Triangles
     /*
@@ -69,7 +70,6 @@ void Scene::load(void)
     */
 
     //OBJ Loader
-    /*
     std::vector<glm::vec3> vertices;
     std::vector<glm::vec3> normals;
     std::vector<glm::vec2> uvs;
@@ -100,5 +100,4 @@ void Scene::load(void)
                                               rand() % 256 / 255.0,
                                               rand() % 256 / 255.0};
     }
-    */
 }
