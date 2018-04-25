@@ -1,13 +1,15 @@
 #ifndef MAIN_H_
 #define MAIN_H_
 
+#include <thread>
+#include <cstdlib>
+
 #include "camera.h"
 #include "orthographic_camera.h"
 #include "perspective_camera.h"
 #include "scene.h"
 #include "buffer.h"
-#include "raytracer.h"
-#include <thread>
+#include "pathtracer.h"
 
 #endif /* MAIN_H_ */
 
