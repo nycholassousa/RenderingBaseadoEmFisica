@@ -13,6 +13,7 @@ bool Scene::intersect(const Ray &ray,
 {
     bool intersection_result = false;
     IntersectionRecord tmp_intersection_record;
+    intersection_record.t_ = std::numeric_limits<double>::max();
     std::size_t num_primitives = primitives_.size();
 
     // Loops over the list of primitives, testing the intersection of each primitive against the given ray
@@ -29,6 +30,16 @@ bool Scene::intersect(const Ray &ray,
 
 void Scene::load(void)
 {
+
+    /** Light Sample
+    primitives_.push_back(Primitive::PrimitiveUniquePtr(new Sphere{
+        glm::vec3{0.0f, 2.0f, 0.0f},
+        1.0f}));
+
+    primitives_.back()->color = glm::vec3{30.0f, 30.0f, 30.0f};
+    primitives_.back()->emiter = true;
+    **/
+
     std::vector<glm::vec3> vertices;
     std::vector<glm::vec3> normals;
     std::vector<glm::vec2> uvs;
@@ -58,5 +69,7 @@ void Scene::load(void)
         primitives_.back()->color = glm::vec3{rand() % 256 / 255.0,
                                               rand() % 256 / 255.0,
                                               rand() % 256 / 255.0};
+
+        primitives_.back()->emiter = true;
     }
 }

@@ -27,18 +27,26 @@ int main(void)
                  background_color,
                  rendering_buffer);
 
-    std::thread thread0(&RayTracer::integrate, &rt, 0, 4);
-    std::thread thread1(&RayTracer::integrate, &rt, 1, 4);
-    std::thread thread2(&RayTracer::integrate, &rt, 2, 4);
-    std::thread thread3(&RayTracer::integrate, &rt, 3, 4);
+    std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now(); //Staring to count time
+    const int num_threads = 4;
+    std::thread *threads[num_threads];
+    std::thread control{&RayTracer::print_progress, &rt};
 
-    thread0.join();
-    thread1.join();
-    thread2.join();
-    thread3.join();
+    for (int i = 0; i < num_threads; i++)
+        threads[i] = new std::thread{&RayTracer::integrate, &rt};
+
+    for (int i = 0; i < num_threads; i++)
+    {
+        threads[i]->join();
+        delete threads[i];
+    }
+
+    control.join();
 
     // Save the rendered image to a .ppm file.
     rendering_buffer.save("output_image.ppm");
+    std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now(); //Ending counting time
 
+    std::cout << "Time = " << std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() / 1000 << " seconds" << std::endl;
     return EXIT_SUCCESS;
 }

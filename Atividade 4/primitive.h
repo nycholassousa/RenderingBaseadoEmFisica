@@ -12,6 +12,7 @@ class Primitive
     typedef std::unique_ptr<Primitive> PrimitiveUniquePtr;
 
     glm::vec3 color = {0.5f, 0.5f, 0.5f};
+    bool emiter = false;
 
     Primitive(void);
 
