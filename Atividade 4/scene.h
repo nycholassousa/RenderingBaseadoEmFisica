@@ -14,17 +14,17 @@
 
 class Scene
 {
-  public:
-    Scene(void);
+public:
+  Scene(void);
 
-    ~Scene(void);
+  ~Scene(void);
 
-    bool intersect(const Ray &ray,
-                   IntersectionRecord &intersection_record) const;
+  bool intersect(const Ray &ray,
+                 IntersectionRecord &intersection_record) const;
 
-    void load(void);
+  void load(void);
 
-    std::vector<Primitive::PrimitiveUniquePtr> primitives_;
+  std::vector<Primitive::PrimitiveUniquePtr> primitives_;
 };
 
 #endif /* SCENE_H_ */
