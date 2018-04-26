@@ -21,7 +21,7 @@ LDFLAGS = -L/usr/lib/gcc/x86_64-linux-gnu/4.8 \
 
 LDLIBS = -lpthread
 
-SOURCES = $(wildcard *.cpp */*.cpp)
+SOURCES = $(wildcard *.cpp buffer/*.cpp camera/*.cpp integrator/*.cpp loader/*.cpp materials/*.cpp primitives/*.cpp scenes/*.cpp shapes/*.cpp)
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
@@ -37,7 +37,7 @@ $(EXECUTABLE): $(OBJECTS)
 .PHONY: clean distclean
 
 clean:
-	rm *.o *.d *.ppm
+	rm -f *.o *.d */*.o */*.d *.ppm
 
 distclean: clean
 	rm $(EXECUTABLE)
