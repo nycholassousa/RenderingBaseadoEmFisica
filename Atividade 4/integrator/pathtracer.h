@@ -17,9 +17,9 @@ class PathTracer
 {
 public:
   PathTracer(Camera &camera,
-            const Scene &scene,
-            const glm::vec3 background_color,
-            Buffer &buffer);
+             const Scene &scene,
+             const glm::vec3 background_color,
+             Buffer &buffer);
 
   // void integrate( void );
 

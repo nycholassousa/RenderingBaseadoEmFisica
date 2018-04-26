@@ -30,4 +30,21 @@ $ ./swpathtracer Samples_Per_Pixel Depth Threads OutputFile
 
 Nos primeiros commits dessa atividades, já deu pra notar uma grande diferença entre o ray tracing e o path tracing, antes mesmo de usar a emitância, como pode-se ver na comparação de images a seguir:
 
-<img src="images/commit1.png" width="300" hspace="20"/> <img src="https://github.com/nycholassousa/RenderingBaseadoEmFisica/raw/master/Atividade%203/images/image2.png" width="300"/>
+
+<p align="center">
+	<br>
+    <img src="./images/commit1.png" width="375" hspace="20"/> <img src="https://github.com/nycholassousa/RenderingBaseadoEmFisica/raw/master/Atividade%203/images/image2.png" width="375"/>
+	<h5 align="center">Figura 1 - A esquerda, início do path tracer, na direita, imagem utilizando ray tracer</h5>
+	<br>
+</p>
+
+Após isso, foi criado a emitância, ou seja, definindo ou não se certa "parte" será quem emite luz ou não, e usando uma pequena fonte de luz, o resultado foi o seguinte:
+
+<p align="center">
+	<br>
+	<img src="./images/commit2.png"/>
+	<h5 align="center">Figura 2 - Começando a usar emitância</h5>
+	<br>
+</p>
+
+A qualidade da imagem não fica muito boa, pois os raios que não encontram o modelo, não são rebatidos de lugar algum, e os que encontram, não rebatem em nada, assim, ficando com essa qualidade.
