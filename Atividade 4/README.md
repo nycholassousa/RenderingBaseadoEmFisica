@@ -16,4 +16,4 @@ Este arquivo usa o RT-Template disponibilizado pelo professor Christian A. Pagot
 
 Nos primeiros commits dessa atividades, já deu pra notar uma grande diferença entre o ray tracing e o path tracing, antes mesmo de usar a emitância, como pode-se ver na comparação de images a seguir:
 
-![alt-text-1](images/commit1.png "Imagem com Path Tracing") ![alt-text-2](https://github.com/nycholassousa/RenderingBaseadoEmFisica/blob/master/Atividade%203/images/image2.png "Imagem com Ray Tracing")
+<img src="images/commit1.png" width="200"/> <img src="https://github.com/nycholassousa/RenderingBaseadoEmFisica/raw/master/Atividade%203/images/image2.png" width="200"/>
