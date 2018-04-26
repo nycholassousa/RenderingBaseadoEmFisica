@@ -79,7 +79,7 @@ void PathTracer::integrate_parallel(const int num_rays)
 
 				buffer_.buffer_data_[x][y] /= float(num_rays);
 
-				glm::clamp(buffer_.buffer_data_[x][y], glm::vec3{0.0f, 0.0f, 0.0f}, glm::vec3{1.0f, 1.0f, 1.0f});
+				buffer_.buffer_data_[x][y] = glm::clamp(buffer_.buffer_data_[x][y], glm::vec3{0.0f, 0.0f, 0.0f}, glm::vec3{1.0f, 1.0f, 1.0f});
 			}
 		}
 	}
@@ -93,7 +93,6 @@ glm::vec3 PathTracer::L(const Ray &r, int depth,
 
 	glm::vec3 Lo = glm::vec3{0.0f};
 	IntersectionRecord intersection_record;
-	ONB rotation;
 
 	if (depth < 5)
 		if (scene_.intersect(r, intersection_record))
@@ -120,10 +119,13 @@ glm::vec3 PathTracer::L(const Ray &r, int depth,
 
 				glm::vec3 new_ray = glm::vec3(x, y, z);
 
-				rotation.setFromV(intersection_record.normal_);
-				new_ray = rotation.getBasisMatrix() * new_ray;
-
 				float cosTheta = glm::dot(new_ray, intersection_record.normal_);
+
+				if (cosTheta < 0)
+				{
+					new_ray = -new_ray;
+					cosTheta = -cosTheta;
+				}
 
 				Ray reflect{intersection_record.position_ + 0.001f * intersection_record.normal_, new_ray};
 
