@@ -85,3 +85,23 @@ Após terminar a parte dos materiais, obtive o seguinte resultado:
 </p>
 
 A imagem acima foi utilizado 1000 raios por pixel, 4 threads e 5 de profundidade, onde demorou cerca de 2 minutos e 12 segundos.
+
+Com isso, resolvi usar mais raios por pixel e mudar um pouco a profundidade, pra ver o quão diferente ficaria:
+
+<p align="center">
+	<br>
+	<img src="./images/img6.png"/>
+	<h5 align="center">Figura 6 - Aumentando a quantidade de raios por pixel</h5>
+	<br>
+</p>
+
+Para gerar essa imagem, utilizei 5000 raios por pixel, 4 threads e 10 de profundidade, onde demorou cerca de 
+
+Colocando as duas imagens lado a lado, podemos ver melhor a diferença entre cada uma:
+
+<p align="center">
+	<br>
+    <img src="./images/img5.png" width="375" hspace="20"/> <img src="./images/img6.png" width="375"/>
+	<h5 align="center">Figura 7 - Comparação entre as figuras 5 e 6</h5>
+	<br>
+</p>
