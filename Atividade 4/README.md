@@ -33,7 +33,7 @@ Nos primeiros commits dessa atividades, já deu pra notar uma grande diferença 
 
 <p align="center">
 	<br>
-    <img src="./images/commit1.png" width="375" hspace="20"/> <img src="https://github.com/nycholassousa/RenderingBaseadoEmFisica/raw/master/Atividade%203/images/image2.png" width="375"/>
+    <img src="./images/img1.png" width="375" hspace="20"/> <img src="https://github.com/nycholassousa/RenderingBaseadoEmFisica/raw/master/Atividade%203/images/image2.png" width="375"/>
 	<h5 align="center">Figura 1 - A esquerda, início do path tracer, na direita, imagem utilizando ray tracer</h5>
 	<br>
 </p>
@@ -42,9 +42,29 @@ Após isso, foi criado a emitância, ou seja, definindo ou não se certa "parte"
 
 <p align="center">
 	<br>
-	<img src="./images/commit2.png"/>
+	<img src="./images/img2.png"/>
 	<h5 align="center">Figura 2 - Começando a usar emitância</h5>
 	<br>
 </p>
 
 A qualidade da imagem não fica muito boa, pois os raios que não encontram o modelo, não são rebatidos de lugar algum, e os que encontram, não rebatem em nada, assim, ficando com essa qualidade.
+
+Com isso, resolvi inserir um cenário, assim, podendo testar melhor como estava funcionando a emitância e também, ver se os raios secundários estavam certos, assim, gerando o seguinte resultado:
+
+<p align="center">
+	<br>
+	<img src="./images/img3.png"/>
+	<h5 align="center">Figura 3 - Testando emitância junto com raios secundários</h5>
+	<br>
+</p>
+
+O resultado, na minha opinião, foi satisfatório, porém, eu desejei melhorar mais ainda a imagem, pra ver se não faltava mais algo, com isso, aumentei a quantidade de raios por pixel e aumentei a profundidade (eu queria ver se mudando muito a profundidade, alterava em algo), e o resultado ficou da seguinte maneira:
+
+<p align="center">
+	<br>
+	<img src="./images/img4.png"/>
+	<h5 align="center">Figura 4 - Teste de emitância e raios secundários com mais amostras</h5>
+	<br>
+</p>
+
+Eu, particularmente, gostei do resultado, mas como ainda não tinha feito a parte de material e brdf, dá pra notar como a imagem fica artificial, principalmente o lado direito, a cor azul.
