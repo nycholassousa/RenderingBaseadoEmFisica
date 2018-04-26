@@ -28,6 +28,8 @@ $ ./swpathtracer Samples_Per_Pixel Depth Threads OutputFile
 
 ## Resultados
 
+### Começando o cálculo do Path Tracer
+
 Nos primeiros commits dessa atividades, já deu pra notar uma grande diferença entre o ray tracing e o path tracing, antes mesmo de usar a emitância, como pode-se ver na comparação de images a seguir:
 
 
@@ -38,7 +40,9 @@ Nos primeiros commits dessa atividades, já deu pra notar uma grande diferença 
 	<br>
 </p>
 
-Após isso, foi criado a emitância, ou seja, definindo ou não se certa "parte" será quem emite luz ou não, e usando uma pequena fonte de luz, o resultado foi o seguinte:
+### Emitância
+
+Após a seção anterior, foi criado a emitância, ou seja, definindo ou não se certa "parte" será quem emite luz ou não, e usando uma pequena fonte de luz, o resultado foi o seguinte:
 
 <p align="center">
 	<br>
@@ -68,3 +72,16 @@ O resultado, na minha opinião, foi satisfatório, porém, eu desejei melhorar m
 </p>
 
 Eu, particularmente, gostei do resultado, mas como ainda não tinha feito a parte de material e brdf, dá pra notar como a imagem fica artificial, principalmente o lado direito, a cor azul.
+
+### Inserindo Materiais
+
+Após terminar a parte dos materiais, obtive o seguinte resultado:
+
+<p align="center">
+	<br>
+	<img src="./images/img5.png"/>
+	<h5 align="center">Figura 5 - Utilizando materiais difusos</h5>
+	<br>
+</p>
+
+A imagem acima foi utilizado 1000 raios por pixel, 4 threads e 5 de profundidade, onde demorou cerca de 2 minutos e 12 segundos.
