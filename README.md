@@ -12,3 +12,5 @@ O arquivo readme será parecido com uma postagem de blog
 [Trabalho 2 (Intersecção Raio-Triângulo)](https://github.com/nycholassousa/RenderingBaseadoEmFisica/tree/master/Atividade%202)
 
 [Trabalho 3 (Câmera Perspectiva e Obj Loader)](https://github.com/nycholassousa/RenderingBaseadoEmFisica/tree/master/Atividade%203)
+
+[Trabalho 4 (Path Tracer)](https://github.com/nycholassousa/RenderingBaseadoEmFisica/tree/master/Atividade%204)
