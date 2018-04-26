@@ -95,7 +95,7 @@ Com isso, resolvi usar mais raios por pixel e mudar um pouco a profundidade, pra
 	<br>
 </p>
 
-Para gerar essa imagem, utilizei 5000 raios por pixel, 4 threads e 10 de profundidade, onde demorou cerca de 
+Para gerar essa imagem, utilizei 5000 raios por pixel, 4 threads e 10 de profundidade, onde demorou cerca de 9,98 minutos (599 segundos)
 
 Colocando as duas imagens lado a lado, podemos ver melhor a diferença entre cada uma:
 
@@ -105,3 +105,13 @@ Colocando as duas imagens lado a lado, podemos ver melhor a diferença entre cad
 	<h5 align="center">Figura 7 - Comparação entre as figuras 5 e 6</h5>
 	<br>
 </p>
+
+Como podemos ver, já ouve uma grande melhoria em uma diferença de 7 ~ 8 minutos entre uma imagem e outra (claro, contando com o aumento de raios por pixel e da profundidade). Caso coloque pra ficar por um tempo indefinido, a imagem iria ter uma melhora mais significativa ainda.
+
+## Dificuldades Encontradas
+
+Uma das dificuldades foi com os cálculos dos raios, onde às vezes dava problema com os raios secundários, gerando uma imagem contrária ao que desejava - o fundo ficava colorido e onde era o obj, ficava preto. Esqueci de tirar print pra mostrar como era o resultado.
+
+## Referências
+
+- Notas de Aula do Professor Christian A. Pagot
