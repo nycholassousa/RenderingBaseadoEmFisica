@@ -6,7 +6,7 @@
 
 #include <glm/glm.hpp>
 #include "onb.h"
-#include "ray.h"
+#include "../primitives/ray.h"
 
 class Camera
 {

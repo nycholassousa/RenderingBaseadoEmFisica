@@ -2,7 +2,7 @@
 #define ORTHOGRAPHIC_CAMERA_H_
 
 #include "camera.h"
-#include "ray.h"
+#include "../primitives/ray.h"
 
 class OrthographicCamera : public Camera
 {

@@ -9,10 +9,9 @@
 #include <chrono>
 #include <thread>
 
-#include "camera.h"
-#include "scene.h"
-#include "buffer.h"
-#include <cmath>
+#include "../camera/camera.h"
+#include "../scenes/scene.h"
+#include "../buffer/buffer.h"
 
 class PathTracer
 {

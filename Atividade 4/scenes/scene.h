@@ -7,11 +7,11 @@
 #include <vector>
 #include <glm/glm.hpp>
 
-#include "primitive.h"
-#include "sphere.h"
-#include "triangle.h"
-#include "loader.h"
-#include "object.h"
+#include "../primitives/primitive.h"
+#include "../shapes/sphere.h"
+#include "../shapes/triangle.h"
+#include "../loader/loader.h"
+#include "../materials/object.h"
 
 class Scene
 {

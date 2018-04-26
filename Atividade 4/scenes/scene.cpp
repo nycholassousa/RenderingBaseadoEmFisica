@@ -102,10 +102,10 @@ void Scene::load( void ) {
 	Object::material_list.push_back(m4);
 	Object::material_list.push_back(m0);
 
-	loadObject("cornell_box01.obj", 0);
-	loadObject("cornell_box02.obj", 1);
-	loadObject("cornell_box03.obj", 2);
-	loadObject("cornell_box04.obj", 3);	
+	loadObject("objs/cornell_box01.obj", 0);
+	loadObject("objs/cornell_box02.obj", 1);
+	loadObject("objs/cornell_box03.obj", 2);
+	loadObject("objs/cornell_box04.obj", 3);	
 }
 
 void Scene::loadObject(const std::string file_name, int material_index){

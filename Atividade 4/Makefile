@@ -21,7 +21,7 @@ LDFLAGS = -L/usr/lib/gcc/x86_64-linux-gnu/4.8 \
 
 LDLIBS = -lpthread
 
-SOURCES = $(wildcard *.cpp)
+SOURCES = $(wildcard *.cpp */*.cpp)
 
 OBJECTS = $(SOURCES:.cpp=.o)
 

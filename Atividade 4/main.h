@@ -4,12 +4,14 @@
 #include <thread>
 #include <cstdlib>
 
-#include "camera.h"
-#include "orthographic_camera.h"
-#include "perspective_camera.h"
-#include "scene.h"
-#include "buffer.h"
-#include "pathtracer.h"
+#include "camera/camera.h"
+#include "camera/orthographic_camera.h"
+#include "camera/perspective_camera.h"
+
+#include "scenes/scene.h"
+
+#include "buffer/buffer.h"
+#include "integrator/pathtracer.h"
 
 #endif /* MAIN_H_ */
 

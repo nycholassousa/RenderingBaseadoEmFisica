@@ -2,7 +2,7 @@
 #define INTERSECTION_RECORD_H_
 
 #include <glm/glm.hpp>
-#include "primitive.h"
+#include "../primitives/primitive.h"
 
 class Primitive;
 
