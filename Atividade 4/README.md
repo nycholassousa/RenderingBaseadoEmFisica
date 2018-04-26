@@ -2,6 +2,20 @@
 
 Este arquivo usa o RT-Template disponibilizado pelo professor Christian A. Pagot, que pode ser encontrado [clicando aqui](https://github.com/capagot).
 
+## Como usar o programa
+
+```sh
+$ ./swpathtracer Samples_Per_Pixel Depth Threads OutputFile
+```
+
+- Samples_Per_Pixel: Quantidade amostras por pixel
+
+- Depth: Profundidade máxima dos raios
+
+- Threads: Quantidade de threads usada para gerar a imagem (usei 4, devido minha máquina ser um i5)
+
+- OutputFile: Nome de saída do arquivo, não é necessário inserir a extensão, será sempre um arquivo do tipo .ppm
+
 ## Atividade Proposta
 
 - Box filtering: Diversas amostras de radiância serão obtidas para cada pixel. As amostras devem apresentar distribuição uniforme sobre a área do pixel (sugestão: utilizar as classes de geração de números randômicos para C++11, mais especificamente o Mersenne Twister). O resultado final da radiância incidente em um pixel será a média das amostras (box filter). O número de amostras por pixel deve ser um parâmetro da aplicação.
@@ -16,4 +30,4 @@ Este arquivo usa o RT-Template disponibilizado pelo professor Christian A. Pagot
 
 Nos primeiros commits dessa atividades, já deu pra notar uma grande diferença entre o ray tracing e o path tracing, antes mesmo de usar a emitância, como pode-se ver na comparação de images a seguir:
 
-<img src="images/commit1.png" width="200"/> <img src="https://github.com/nycholassousa/RenderingBaseadoEmFisica/raw/master/Atividade%203/images/image2.png" width="200"/>
+<img src="images/commit1.png" width="300" hspace="20"/> <img src="https://github.com/nycholassousa/RenderingBaseadoEmFisica/raw/master/Atividade%203/images/image2.png" width="300"/>
