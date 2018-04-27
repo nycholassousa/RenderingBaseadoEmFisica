@@ -5,13 +5,15 @@ int depthMain = 0;
 int main(int argc, char *argv[])
 {
 
-    if (argc != 5){
+    if (argc != 5)
+    {
         std::cout << "How to Use:" << std::endl;
         std::cout << "./swpathtracer spp depth numThreads fileName\n";
         std::cout << "spp: Samples Per Pixel\n"
                   << "depth: Maximum ray depth\n"
-                  << "num_threads: Number of Threads (recommended 4)\n" 
-                  << "file_name: Output filename\n" << std::endl;
+                  << "num_threads: Number of Threads (recommended 4)\n"
+                  << "file_name: Output filename\n"
+                  << std::endl;
         std::cout << "Example: ./swpathtracer 100 5 4 output" << std::endl;
 
         return EXIT_FAILURE;
@@ -43,9 +45,9 @@ int main(int argc, char *argv[])
 
     // Set up the renderer.
     PathTracer pt(camera,
-                 scene,
-                 background_color,
-                 rendering_buffer);
+                  scene,
+                  background_color,
+                  rendering_buffer);
 
     std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now(); //Staring to count time
     pt.integrate(num_threads, spp);                                                 // Renders the final image.

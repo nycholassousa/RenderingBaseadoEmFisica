@@ -119,3 +119,4 @@ Encontrar a iluminação "correta" foi um tanto trabalhoso, visto que qualquer m
 - Notas de Aula do Professor Christian A. Pagot
 - Notas de Aula do Professor Andrei sobre Método de Integração de Monte Carlo
 - [Wikipédia: Path Tracing](https://en.wikipedia.org/wiki/Path_tracing)
+- [Arquivos do Cornell Box prontos para o Blender](https://github.com/LucasReSilva/Cornell-Box)

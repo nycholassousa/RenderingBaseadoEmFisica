@@ -13,10 +13,10 @@ PathTracer::PathTracer(Camera &camera,
 void PathTracer::integrate(const int num_threads, const int num_rays)
 {
 	std::thread **threads = new std::thread *[num_threads];
-	std::thread control{&PathTracer::print_progress, this};
+	std::thread control{&PathTracer::progressStatus, this};
 
 	for (int i = 0; i < num_threads; i++)
-		threads[i] = new std::thread{&PathTracer::integrate_parallel, this, num_rays};
+		threads[i] = new std::thread{&PathTracer::integrateParallel, this, num_rays};
 
 	for (int i = 0; i < num_threads; i++)
 	{
@@ -28,7 +28,7 @@ void PathTracer::integrate(const int num_threads, const int num_rays)
 	control.join();
 }
 
-void PathTracer::integrate_parallel(const int num_rays)
+void PathTracer::integrateParallel(const int num_rays)
 {
 	std::mt19937 generator;
 	std::uniform_real_distribution<float> dist_x(0.0f, 1.0f);
@@ -36,10 +36,8 @@ void PathTracer::integrate_parallel(const int num_rays)
 	std::uniform_real_distribution<float> dist_theta(0.0f, 2.0f * M_PI);
 	std::uniform_real_distribution<float> dist_phi(0.0f, 1.0f);
 
-	int init_x;
-	int init_y;
-	int max_x;
-	int max_y;
+	int init_x, max_x;
+	int init_y, max_y;
 
 	int work_block;
 	int block_size_h = buffer_.h_resolution_ / 15; // /16
@@ -136,14 +134,11 @@ glm::vec3 PathTracer::L(const Ray &r, int depth,
 	return Lo;
 }
 
-void PathTracer::print_progress()
+void PathTracer::progressStatus()
 {
 
 	int work_block;
 	int completed_blocks;
-	time_t initial_time = time(NULL);
-	int remaining_time = 0;
-	int prev_total_time = 0;
 
 	while (true)
 	{
@@ -162,7 +157,7 @@ void PathTracer::print_progress()
 
 		if (work_block == 260)
 			break;
-		std::this_thread::sleep_for(std::chrono::seconds(prev_total_time * 0.05 < 2 ? 2 : prev_total_time * 0.05 > 5 ? 5 : int(prev_total_time * 0.05)));
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 
 	std::clog << std::endl;

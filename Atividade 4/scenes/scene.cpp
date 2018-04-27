@@ -14,7 +14,6 @@ bool Scene::intersect(const Ray &ray,
 	bool intersection_result = false;
 	IntersectionRecord tmp_intersection_record;
 	intersection_record.t_ = std::numeric_limits<double>::max();
-	//std::size_t num_primitives = primitives_.size();
 	std::size_t num_objects = objects_.size();
 	std::size_t num_primitives;
 
@@ -39,27 +38,30 @@ bool Scene::intersect(const Ray &ray,
 void Scene::load(void)
 {
 
-	Material m0 = {glm::vec3{0.0f}, glm::vec3{1.0f}, Material::diffuse};
-	Material m1 = {glm::vec3{0.0f}, glm::vec3{0.725f, 0.71f, 0.68f}, Material::diffuse};
-	Material m2 = {glm::vec3{0.0f}, glm::vec3{0.63f, 0.065f, 0.05f}, Material::diffuse};
-	Material m3 = {glm::vec3{0.0f}, glm::vec3{0.14f, 0.45f, 0.091f}, Material::diffuse};
-	Material m4 = {glm::vec3{37.0f, 32.0f, 24.0f}, glm::vec3{0.78f}, Material::diffuse}; //24.0f
+	//Setting Colors, light and material type
+	/* Example:
+	** Material mX = {1 parameter, 2 parameter, 3 parameter}
+	** 1 parameter: The object will emit light or not, if it does not emit light, just leave it as 0
+	** 2 parameter: Color of the object
+	** 3 parameter: Type of the object/material
+	*/
+	Material m1 = {glm::vec3{0.0f}, glm::vec3{0.725f, 0.71f, 0.68f}, Material::diffuse}; // White ~ Gray Color
+	Material m2 = {glm::vec3{0.0f}, glm::vec3{0.63f, 0.065f, 0.05f}, Material::diffuse}; // Red Color
+	Material m3 = {glm::vec3{0.0f}, glm::vec3{0.14f, 0.45f, 0.091f}, Material::diffuse}; // Green Color
+	Material m4 = {glm::vec3{37.0f, 32.0f, 24.0f}, glm::vec3{0.78f}, Material::diffuse}; // Yellow Color
 
-	Material m5 = {glm::vec3{0.0f}, glm::vec3{0.5f}, Material::diffuse};
-	Material m6 = {glm::vec3{30.0f}, glm::vec3{0.0f}, nullptr};
-
+	//Add Material in a vector
 	Object::material_list.push_back(m1);
 	Object::material_list.push_back(m2);
 	Object::material_list.push_back(m3);
 	Object::material_list.push_back(m4);
-	Object::material_list.push_back(m0);
-	Object::material_list.push_back(m5);
-	Object::material_list.push_back(m6);
 
-	loadObject("objs/cornell_box01.obj", 0);
-	loadObject("objs/cornell_box02.obj", 1);
-	loadObject("objs/cornell_box03.obj", 2);
-	loadObject("objs/cornell_box04.obj", 3);
+	//Points or Position by file.obj
+	//First "push_back" = First index
+	loadObject("objs/cornell_box01.obj", 0); //Top, Bottom, Back Wall and Boxes
+	loadObject("objs/cornell_box02.obj", 1); //Left Wall
+	loadObject("objs/cornell_box03.obj", 2); //Right Wall
+	loadObject("objs/cornell_box04.obj", 3); //Light
 }
 
 void Scene::loadObject(const std::string file_name, int material_index)

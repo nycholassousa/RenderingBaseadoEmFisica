@@ -25,14 +25,14 @@ public:
 
   void integrate(const int num_threads = 4, const int num_rays = 10);
 
-  void integrate_parallel(const int num_rays);
+  void integrateParallel(const int num_rays);
 
   glm::vec3 L(const Ray &r, int depth,
               std::uniform_real_distribution<float> &theta,
               std::uniform_real_distribution<float> &phi,
               std::mt19937 &generator);
 
-  void print_progress();
+  void progressStatus();
 
 private:
   const Camera &camera_;
