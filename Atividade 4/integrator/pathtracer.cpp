@@ -156,27 +156,13 @@ void PathTracer::print_progress()
 						<< std::fixed << std::setw(6)
 						<< std::setprecision(2)
 						<< 0.390625 * completed_blocks
-						<< "% | "
-						<< completed_blocks << "/" << 256;
-
-		if (completed_blocks)
-		{
-
-			prev_total_time = 256 * difftime(time(NULL), initial_time) / completed_blocks;
-			remaining_time = prev_total_time - difftime(time(NULL), initial_time);
-
-			progress_stream << " | "
-							<< remaining_time / 3600 << " h "
-							<< (remaining_time / 60) % 60 << " min "
-							<< remaining_time % 60 << " s   ";
-		}
+						<< "%";
 
 		std::clog << progress_stream.str();
 
 		if (work_block == 260)
 			break;
 		std::this_thread::sleep_for(std::chrono::seconds(prev_total_time * 0.05 < 2 ? 2 : prev_total_time * 0.05 > 5 ? 5 : int(prev_total_time * 0.05)));
-		//std::this_thread::sleep_for (std::chrono::seconds(2));
 	}
 
 	std::clog << std::endl;

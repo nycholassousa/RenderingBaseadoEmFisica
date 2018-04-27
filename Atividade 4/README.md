@@ -112,6 +112,10 @@ Como podemos ver, já ouve uma grande melhoria em uma diferença de 7 ~ 8 minuto
 
 Uma das dificuldades foi com os cálculos dos raios, onde às vezes dava problema com os raios secundários, gerando uma imagem contrária ao que desejava - o fundo ficava colorido e onde era o obj, ficava preto. Esqueci de tirar print pra mostrar como era o resultado.
 
+Encontrar a iluminação "correta" foi um tanto trabalhoso, visto que qualquer manipulada no código do path tracer, principalmente sobre os raios rebatendo, afetava tudo, tornando a imagem mais escura ou muito claro. Sinceramente, não sei se cheguei no nível correto, mas comparando ao mitsuba, cheguei em algo "agradável" aos olhos.
+
 ## Referências
 
 - Notas de Aula do Professor Christian A. Pagot
+- Notas de Aula do Professor Andrei sobre Método de Integração de Monte Carlo
+- [Wikipédia: Path Tracing](https://en.wikipedia.org/wiki/Path_tracing)
