@@ -108,6 +108,17 @@ Colocando as duas imagens lado a lado, podemos ver melhor a diferença entre cad
 
 Como podemos ver, já ouve uma grande melhoria em uma diferença de 7 ~ 8 minutos entre uma imagem e outra (claro, contando com o aumento de raios por pixel e da profundidade). Caso coloque pra ficar por um tempo indefinido, a imagem iria ter uma melhora mais significativa ainda.
 
+E por último, aumentei para 10000 raios e apenas 5 de profundidade, gerando o seguinte resultado:
+
+<p align="center">
+	<br>
+	<img src="./images/img7.png"/>
+	<h5 align="center">Figura 8 - Imagem com 10000 raios e profundidade 5</h5>
+	<br>
+</p>
+
+O tempo para gerar essa imagem foi de 20,9 minutos
+
 ## Dificuldades Encontradas
 
 Uma das dificuldades foi com os cálculos dos raios, onde às vezes dava problema com os raios secundários, gerando uma imagem contrária ao que desejava - o fundo ficava colorido e onde era o obj, ficava preto. Esqueci de tirar print pra mostrar como era o resultado.
