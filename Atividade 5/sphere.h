@@ -8,21 +8,24 @@
 
 class Sphere : public Primitive
 {
-  public:
-	Sphere(void);
+public:
 
-	Sphere(const glm::vec3 &center,
-		   float radius);
+	Sphere( void );
 
-	bool intersect(const Ray &ray,
-				   IntersectionRecord &intersection_record) const;
+	Sphere( const glm::vec3 &center,
+			float radius );
 
-	glm::vec3 center_ = {0.0f, 0.0f, 0.0f};
+	bool intersect( const Ray &ray,
+					IntersectionRecord &intersection_record ) const;
 
-	float radius_ = 1.0f;
+	glm::vec3 center_ = { 0.0f, 0.0f, 0.0f };
 
-  private:
+	float radius_= 1.0f;
+
+private:
+
 	static const float kIntersectionTestEpsilon_;
 };
 
 #endif /* SPHERE_H_ */
+

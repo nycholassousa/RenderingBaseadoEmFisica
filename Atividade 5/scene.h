@@ -8,7 +8,7 @@
 #include <glm/glm.hpp>
 
 #include "primitive.h"
-#include "sphere.h"
+#include "sphere.h" 
 #include "triangle.h"
 #include "loader.h"
 #include "object.h"
@@ -16,22 +16,26 @@
 
 class Scene
 {
-  public:
-	Scene(void);
+public:
 
-	~Scene(void);
+	Scene( void );
 
-	bool intersect(const Ray &ray,
-				   IntersectionRecord &intersection_record) const;
+	~Scene( void );
 
-	void load(void);
+	bool intersect( const Ray &ray,
+					IntersectionRecord &intersection_record ) const;
+
+	void load( void );
 
 	void loadObject(const std::string file_name, int material_index, glm::vec3 translation = glm::vec3{0.0f});
 
-	std::vector<Primitive::PrimitiveUniquePtr> primitives_;
+	std::vector< Primitive::PrimitiveUniquePtr > primitives_;
 
-	std::vector<Object::ObjectUniquePtr> objects_;
+	std::vector< Object::ObjectUniquePtr > objects_;
+
 	BVH bvh;
+
 };
 
 #endif /* SCENE_H_ */
+

@@ -98,7 +98,7 @@ void RayTracer::integrate_parallel(const int num_rays, const int thread_id)
 
 				buffer_.buffer_data_[x][y] /= float(num_rays);
 
-				buffer_.buffer_data_[x][y] = glm::clamp(buffer_.buffer_data_[x][y],
+				buffer_.buffer_data_[x][y] = glm::clamp(glm::pow(buffer_.buffer_data_[x][y], glm::vec3{0.4545454f}),
 														glm::vec3{0.0f, 0.0f, 0.0f},
 														glm::vec3{1.0f, 1.0f, 1.0f});
 
@@ -125,10 +125,10 @@ glm::vec3 RayTracer::L(const Ray &r, int depth,
 	glm::vec3 new_ray;
 
 	float n_in = 1.0f;
-	float n_out = 1.458f;
+	float n_out = 1.5f;
 	bool in_out;
 
-	if (depth < 10 && scene_.intersect(r, intersection_record))
+	if (depth < 7 && scene_.intersect(r, intersection_record))
 	{
 
 		////////////////////////////////////
@@ -207,12 +207,12 @@ glm::vec3 RayTracer::L(const Ray &r, int depth,
 
 				Lo = material.emittance_ +
 					 2.0f * float(M_PI) *
-						 material.brdf() *
+						 material.brdf(n, r.direction_, new_ray) *
 						 L(reflect, ++depth, dist_theta, dist_phi, generator) *
 						 cosThetaOut;
 			}
 
-			else if (material.mode == Material::DIRECTIONAL || fresnel == 2.0f)
+			else if (material.mode == Material::DIRECTIONAL && fresnel < 2.0f)
 			{
 
 				new_ray = r.direction_ -
@@ -222,8 +222,39 @@ glm::vec3 RayTracer::L(const Ray &r, int depth,
 				Ray reflect{intersection_record.position_ + 0.001f * n, new_ray};
 
 				Lo = material.emittance_ +
-					 material.brdf() *
+					 material.brdf(n, r.direction_, new_ray) *
 						 L(reflect, ++depth, dist_theta, dist_phi, generator);
+			}
+
+			else if (material.mode == Material::GLOSSY || fresnel == 2.0f)
+			{
+
+				float theta, phi, x, y, z;
+
+				theta = dist_theta(generator);
+				phi = atan(sqrt(-material.roughness_ * material.roughness_ * log(dist_phi(generator))));
+
+				x = sin(phi) * cos(theta);
+				z = sin(phi) * sin(theta);
+				y = cos(phi);
+
+				glm::vec3 m = glm::vec3(x, y, z);
+
+				rotation.setFromV(n);
+				m = rotation.getBasisMatrix() * m;
+
+				new_ray = r.direction_ -
+						  2.0f * m *
+							  glm::dot(r.direction_, m);
+
+				cosThetaOut = glm::dot(new_ray, n); // new_ray
+
+				Ray reflect{intersection_record.position_ + 0.001f * n, new_ray};
+
+				Lo = material.emittance_ +
+					 material.brdf(n, new_ray, -r.direction_) * // mudei in por out
+						 L(reflect, ++depth, dist_theta, dist_phi, generator) *
+						 cosThetaOut;
 			}
 		}
 

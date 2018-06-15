@@ -16,32 +16,30 @@
 
 class RayTracer
 {
-  public:
-	enum
-	{
-		IN = false,
-		OUT = true
-	};
+public:
 
-	RayTracer(Camera &camera,
-			  const Scene &scene,
-			  const glm::vec3 background_color,
-			  Buffer &buffer);
+	enum {IN = false, OUT = true};
+
+	RayTracer( Camera &camera,
+			   const Scene &scene,
+			   const glm::vec3 background_color,
+			   Buffer &buffer );
 
 	// void integrate( void );
 
-	void integrate(const int num_threads = 4, const int num_rays = 10);
+	void integrate( const int num_threads = 4, const int num_rays = 10);
 
-	void integrate_parallel(const int num_rays, const int thread_id);
+	void integrate_parallel( const int num_rays, const int thread_id );
 
-	glm::vec3 L(const Ray &r, int depth,
-				std::uniform_real_distribution<float> &theta,
-				std::uniform_real_distribution<float> &phi,
-				std::mt19937 &generator);
+	glm::vec3 L(const Ray& r, int depth, 
+				 std::uniform_real_distribution<float>& theta,
+				 std::uniform_real_distribution<float>& phi,
+				 std::mt19937& generator);
 
 	void print_progress();
 
-  private:
+private:
+
 	const Camera &camera_;
 
 	const Scene &scene_;
@@ -62,6 +60,8 @@ class RayTracer
 	const int block_size_v = 32;
 
 	int *progress;
+
 };
 
 #endif /* RAYTRACER_H_ */
+
